@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+</head>
+<body>
+<form action="/main/formular_submit/" method="POST">{% csrf_token %}
+Nume: <input type="text" name="nume"><br />
+Prenume: <input type="text" name="prenume"><br />
+    <input type="submit" name="trimite" value="Trimite">
+</form>
+</body>
+</html>
