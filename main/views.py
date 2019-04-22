@@ -20,9 +20,9 @@ def persons(request):
         return render(request, 'main/persons.html', {'persons': persons})
 def deleteperson(request, id):
     if request.method == 'GET':
-        person = Person.objects.get(id=id)
-        person.delete()
-        person.save()
+        Person.objects.all().filter(pk=int(id)).delete()
+        persons = Person.objects.all()
+    return render(request, 'main/persons.html', {'persons': persons})
 def person(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
