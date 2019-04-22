@@ -14,6 +14,15 @@ def formular_submit(request):
 
 from .forms import PersonForm
 from .models import Person
+def persons(request):
+    if request.method == 'GET':
+        persons = Person.objects.all()
+        return render(request, 'main/persons.html', {'persons': persons})
+def deleteperson(request, id):
+    if request.method == 'GET':
+        person = Person.objects.get(id=id)
+        person.delete()
+        person.save()
 def person(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)

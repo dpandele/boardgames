@@ -8,4 +8,6 @@ urlpatterns = [
     path('formular/', views.formular, name="formular"),
     path('formular_submit/', views.formular_submit, name="formular_submit"),
     path('person/', views.person, name='person'),
+    path('persons/', views.persons, name='person'),
+    url(r'deleteperson/(?P<id>\d+)/$', views.deleteperson, name='deleteperson'),
 ]
